@@ -1,6 +1,7 @@
 #--------- Generic stuff all our Dockerfiles should start with so we get caching ------------
 FROM ubuntu:18.04
 
+
 RUN  export DEBIAN_FRONTEND=noninteractive
 ENV  DEBIAN_FRONTEND noninteractive
 RUN  dpkg-divert --local --rename --add /sbin/initctl
