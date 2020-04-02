@@ -54,6 +54,28 @@ if [ -z "${IP_LIST}" ]; then
 	IP_LIST='*'
 fi
 
+if [ -z "${WAL_SIZE}" ]; then
+       WAL_SIZE=4GB
+fi
+
+if [ -z "${MIN_WAL_SIZE}" ]; then
+       MIN_WAL_SIZE=2048MB
+fi
+
+if [ -z "${WAL_SEGSIZE}" ]; then
+       WAL_SEGSIZE=1024
+fi
+
+if [ -z "${DEFAULT_ENCODING}" ]; then
+  DEFAULT_ENCODING="UTF8"
+fi
+if [ -z "${DEFAULT_COLLATION}" ]; then
+  DEFAULT_COLLATION="en_US.UTF-8"
+fi
+if [ -z "${DEFAULT_CTYPE}" ]; then
+  DEFAULT_CTYPE="en_US.UTF-8"
+fi
+
 # Compatibility with official postgres variable
 # Official postgres variable gets priority
 if [ ! -z "${POSTGRES_PASSWORD}" ]; then
